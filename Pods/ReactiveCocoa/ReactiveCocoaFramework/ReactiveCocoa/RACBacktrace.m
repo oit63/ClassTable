@@ -14,6 +14,15 @@
 
 #ifdef DEBUG
 
+#ifndef LLog
+#define LLogF(format, ...) NSLog(@"%s:%i: %@", __FILE__, __LINE__, [NSString stringWithFormat:format, ##__VA_ARGS__]);
+
+#ifdef DEBUG
+#define LLog(format, ...) LLogF(format, ##__VA_ARGS__);
+#else
+#define LLog(format, ...) while(0){}
+#endif
+#endif
 // Undefine the macros that hide the real GCD functions.
 #undef dispatch_async
 #undef dispatch_barrier_async
@@ -110,7 +119,7 @@ __attribute__((used)) static struct { const void *replacement; const void *repla
 };
 
 static void RACSignalHandler (int sig) {
-	NSLog(@"Backtrace: %@", [RACBacktrace backtrace]);
+	LLog(@"Backtrace: %@", [RACBacktrace backtrace]);
 	fflush(stdout);
 
 	// Restore the default action and raise the signal again.
@@ -119,8 +128,8 @@ static void RACSignalHandler (int sig) {
 }
 
 static void RACExceptionHandler (NSException *ex) {
-	NSLog(@"Uncaught exception %@", ex);
-	NSLog(@"Backtrace: %@", [RACBacktrace backtrace]);
+	LLog(@"Uncaught exception %@", ex);
+	LLog(@"Backtrace: %@", [RACBacktrace backtrace]);
 	fflush(stdout);
 }
 
@@ -153,7 +162,7 @@ static void RACExceptionHandler (NSException *ex) {
 		// calls.
 		if ([libraries rangeOfString:@"ReactiveCocoa"].length == 0) return;
 
-		NSLog(@"*** Enabling asynchronous backtraces");
+		LLog(@"*** Enabling asynchronous backtraces");
 
 		NSSetUncaughtExceptionHandler(&RACExceptionHandler);
 	}

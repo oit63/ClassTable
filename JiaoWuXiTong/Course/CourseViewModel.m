@@ -13,7 +13,6 @@
 #import "ObjectiveCGenerics.h"
 #import "AFNetworking.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import "CourseStore.h"
 
 
 @interface CourseViewModel()
@@ -69,8 +68,8 @@
                  NSData *data=responseObject;
                  NSString *transStr=[[NSString alloc]initWithData:data encoding:enc];
                  
-                 NSLog(@"huoqushuju: %ld",(long)operation.response.statusCode);
-                 NSLog(@"数据：%@",transStr);
+                 LLog(@"huoqushuju: %ld",(long)operation.response.statusCode);
+                 LLog(@"数据：%@",transStr);
                  NSString *utf8HtmlStr = [transStr stringByReplacingOccurrencesOfString:@"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=gb2312\">" withString:@"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
                  NSData *htmlDataUTF8 = [utf8HtmlStr dataUsingEncoding:NSUTF8StringEncoding];
                  TFHpple *xpathParser = [[TFHpple alloc]initWithHTMLData:htmlDataUTF8];
@@ -88,7 +87,7 @@
                      NSString *ta=[element tagName];
                      //                  NSDictionary *dic=[element attributes];
                      NSString *nodeContent=[element content];
-                     NSLog(@"课程为XX%@%@",nodeContent,ta);
+                     LLog(@"课程为XX%@%@",nodeContent,ta);
                      [allContents addObject:nodeContent];
                  }
                  
@@ -97,7 +96,7 @@
                  
                  
              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 NSLog(@"Error: %@", [error debugDescription]);
+                 LLog(@"Error: %@", [error debugDescription]);
              }];//获取登陆后的网页
         
         
@@ -110,7 +109,7 @@
     __block NSMutableIndexSet* indexSet=[NSMutableIndexSet indexSet];
     
     [arrayData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {//synchronously
-        NSLog(@"%@",obj);
+        LLog(@"%@",obj);
         NSString *string=obj;
         if([string isEqualToString:@" "]||[string hasPrefix:@"星期"]||[string isEqualToString:@"上午"]||[string isEqualToString:@"下午"]||[string isEqualToString:@"早晨"]||[string isEqualToString:@"晚上"]){
             [indexSet addIndex:idx];
@@ -127,7 +126,7 @@
     [arrayData removeObjectsAtIndexes:indexSet];
     long count=arrayData.count;
     if(count%4==0){
-        NSLog(@"一共有%lu节课程",count/4);
+        LLog(@"一共有%lu节课程",count/4);
         NSMutableArray *cach=[NSMutableArray array];
         for(int i=0;i<arrayData.count/4;i++){
             CalDataModel *model=[[CalDataModel alloc]initWithmingCheng:arrayData[i*4] jiaoShi:arrayData[i*4+3] shiJian:arrayData[i*4+1] laoShi:arrayData[i*4+2] xingQi:0 kaiShiZhou:0 jieShuZhou:0];

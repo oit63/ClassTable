@@ -6,6 +6,15 @@
 //  Copyright (c) 2013 GitHub, Inc. All rights reserved.
 //
 
+#ifndef LLog
+#define LLogF(format, ...) NSLog(@"%s:%i: %@", __FILE__, __LINE__, [NSString stringWithFormat:format, ##__VA_ARGS__]);
+
+#ifdef DEBUG
+#define LLog(format, ...) LLogF(format, ##__VA_ARGS__);
+#else
+#define LLog(format, ...) while(0){}
+#endif
+#endif
 #import "UIBarButtonItem+RACCommandSupport.h"
 #import "RACEXTKeyPathCoding.h"
 #import "NSObject+RACPropertySubscribing.h"
@@ -42,7 +51,7 @@ static void *UIControlEnabledDisposableKey = &UIControlEnabledDisposableKey;
 	SEL hijackSelector = @selector(rac_commandPerformAction:);
 	if (self.target == self && self.action == hijackSelector) return;
 	
-	if (self.target != nil) NSLog(@"WARNING: UIBarButtonItem.rac_command hijacks the control's existing target and action.");
+	if (self.target != nil) LLog(@"WARNING: UIBarButtonItem.rac_command hijacks the control's existing target and action.");
 	
 	self.target = self;
 	self.action = hijackSelector;

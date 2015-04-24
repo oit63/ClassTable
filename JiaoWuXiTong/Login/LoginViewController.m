@@ -56,11 +56,11 @@
     
     
     [[self.loginBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        NSLog(@"aaa");//测试
+        LLog(@"aaa");//测试
     }];
     
     self.refreshBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^(id _) {
-        NSLog(@"button was pressed!");
+        LLog(@"button was pressed!");
         //测试
         return [RACSignal empty];
     }];
@@ -102,17 +102,17 @@
               TFHppleElement *element = [elements objectAtIndex:i];
               self.viewState=[element objectForKey:@"value"];
 //                  [self huoDevs];
-                  NSLog(@"1提取到得viewstate为%@",self.viewState);
+                  LLog(@"1提取到得viewstate为%@",self.viewState);
                   [self loginMet];
 
 
               }
                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"Error: %@", [error debugDescription]);
+              LLog(@"Error: %@", [error debugDescription]);
           }];//获取登陆后的网页
-//    NSLog(@"1提取到得viewstate为%@",viewstates);
+//    LLog(@"1提取到得viewstate为%@",viewstates);
 //    self.viewState=viewstates;
-    NSLog(@"2提取到得viewstate为%@",self.viewState);
+    LLog(@"2提取到得viewstate为%@",self.viewState);
 
 }
 -(void)shuaXinYanZhengMa{
@@ -135,7 +135,7 @@
     requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
 
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Response: %@", responseObject);
+        LLog(@"Response: %@", responseObject);
         dispatch_async(dispatch_get_main_queue(), ^{
             self.checkCodeImageView.image = responseObject;
         });
@@ -151,12 +151,12 @@
 - (IBAction)login:(UIButton *)sender {
     dispatch_queue_t only=dispatch_queue_create("only", NULL);
     if (!self.viewState) {
-        NSLog(@"没有viewstate");
+        LLog(@"没有viewstate");
         dispatch_async(only, ^{
             [self acquireViewStare];
         });
     }else{
-        NSLog(@"有state%@直接登录",self.viewState);
+        LLog(@"有state%@直接登录",self.viewState);
         dispatch_async(only, ^{
             [self loginMet];
         });
@@ -185,7 +185,7 @@
               NSData *data = responseObject;
               NSString *transStr = [[NSString alloc]initWithData:data encoding:enc];
               
-              NSLog(@"biaodantijiaochenggong:%ld，%@",(long)operation.response.statusCode,transStr);//提交表单
+              LLog(@"biaodantijiaochenggong:%ld，%@",(long)operation.response.statusCode,transStr);//提交表单
               self.text.text=transStr;
               //          NSString *html=[[NSString alloc]initWithData:operation.responseData encoding:enc];
               //          NSData *data=[ dataUsingEncoding:NSUTF8StringEncoding];
@@ -209,18 +209,18 @@
                   // Get the text within the cell tag
                   NSString *content = [element text];
                   NSString *ta=[element tagName];
-                  //              NSLog(@"之前%@",self.viewState);
+                  //              LLog(@"之前%@",self.viewState);
                   //              self.viewState=[element objectForKey:@"value"];
-                  //              NSLog(@"之后%@",self.viewState);
+                  //              LLog(@"之后%@",self.viewState);
                   NSString *namess=[content substringToIndex:5];
                   self.name=[namess substringToIndex:[namess length]-2];
-                  NSLog(@"学号姓名为%@%@%@",content,ta,namess);
+                  LLog(@"学号姓名为%@%@%@",content,ta,namess);
               }
               //Get all the cells of the 2nd row of the 3rd table
               self.stuNoNumber=xueHaoSe;
 
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"Error: %@", @"???");
+              LLog(@"Error: %@", @"???");
           }];
 }
 //实例化

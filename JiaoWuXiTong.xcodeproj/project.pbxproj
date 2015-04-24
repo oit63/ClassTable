@@ -32,7 +32,6 @@
 		27E7AA6119C2EAA400E037AD /* DataModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E7AA5719C2EAA400E037AD /* DataModelController.m */; };
 		27E7AA6219C2EAA400E037AD /* FenShuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E7AA5919C2EAA400E037AD /* FenShuViewController.m */; };
 		27E7AA6819C2EFE200E037AD /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E7AA6719C2EFE200E037AD /* UserInfoManager.m */; };
-		B699212B1AE000A000CC6989 /* CTDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = B699210A1AE000A000CC6989 /* CTDefinition.m */; };
 		B699212C1AE000A000CC6989 /* CTCourseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B699210D1AE000A000CC6989 /* CTCourseInfo.m */; };
 		B699212D1AE000A000CC6989 /* CTWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = B69921101AE000A000CC6989 /* CTWeekView.m */; };
 		B699212E1AE000A000CC6989 /* CTHeadViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B69921121AE000A000CC6989 /* CTHeadViewCell.m */; };
@@ -46,7 +45,7 @@
 		B69921361AE000A000CC6989 /* CTDayViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B69921241AE000A000CC6989 /* CTDayViewCell.m */; };
 		B69921371AE000A000CC6989 /* CTDayViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69921251AE000A000CC6989 /* CTDayViewCell.xib */; };
 		B69921381AE000A000CC6989 /* CTDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69921281AE000A000CC6989 /* CTDayViewController.m */; };
-		B699213B1AE098EF00CC6989 /* CourseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B699213A1AE098EF00CC6989 /* CourseStore.m */; };
+		B6A5A8A51AEA4F9300D5593F /* CTDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A5A8A41AEA4F9300D5593F /* CTDefinition.m */; };
 		E05B4511AE5B449BA6D1FEF4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB238E8E11348D0886AA18C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -104,8 +103,6 @@
 		27E7AA6719C2EFE200E037AD /* UserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoManager.m; sourceTree = "<group>"; };
 		3254331E6030405CB647EA06 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8DB238E8E11348D0886AA18C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B69921091AE000A000CC6989 /* CTDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTDefinition.h; sourceTree = "<group>"; };
-		B699210A1AE000A000CC6989 /* CTDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTDefinition.m; sourceTree = "<group>"; };
 		B699210C1AE000A000CC6989 /* CTCourseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCourseInfo.h; sourceTree = "<group>"; };
 		B699210D1AE000A000CC6989 /* CTCourseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCourseInfo.m; sourceTree = "<group>"; };
 		B699210F1AE000A000CC6989 /* CTWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTWeekView.h; sourceTree = "<group>"; };
@@ -129,8 +126,8 @@
 		B69921251AE000A000CC6989 /* CTDayViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTDayViewCell.xib; sourceTree = "<group>"; };
 		B69921271AE000A000CC6989 /* CTDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTDayViewController.h; sourceTree = "<group>"; };
 		B69921281AE000A000CC6989 /* CTDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTDayViewController.m; sourceTree = "<group>"; };
-		B69921391AE098EF00CC6989 /* CourseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStore.h; sourceTree = "<group>"; };
-		B699213A1AE098EF00CC6989 /* CourseStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStore.m; sourceTree = "<group>"; };
+		B6A5A8A31AEA4F9300D5593F /* CTDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTDefinition.h; path = "CTCurriculumsTable-IOS-CollectionView-master/CTCollectionView/CTDefinition.h"; sourceTree = "<group>"; };
+		B6A5A8A41AEA4F9300D5593F /* CTDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTDefinition.m; path = "CTCurriculumsTable-IOS-CollectionView-master/CTCollectionView/CTDefinition.m"; sourceTree = "<group>"; };
 		FFD2B0631AD3BBC900CE9016 /* ObjectiveCGenerics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCGenerics.h; sourceTree = "<group>"; };
 		FFEB65851AD3C9B400F3113F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,7 +195,8 @@
 		2795DD6B18A51FAA00F0ADD0 /* JiaoWuXiTong */ = {
 			isa = PBXGroup;
 			children = (
-				B699210B1AE000A000CC6989 /* onfiguration */,
+				B6A5A8A31AEA4F9300D5593F /* CTDefinition.h */,
+				B6A5A8A41AEA4F9300D5593F /* CTDefinition.m */,
 				B699210E1AE000A000CC6989 /* Model */,
 				B69921221AE000A000CC6989 /* Week */,
 				B699212A1AE000A000CC6989 /* Day */,
@@ -295,21 +293,9 @@
 			path = Score;
 			sourceTree = "<group>";
 		};
-		B699210B1AE000A000CC6989 /* onfiguration */ = {
-			isa = PBXGroup;
-			children = (
-				B69921091AE000A000CC6989 /* CTDefinition.h */,
-				B699210A1AE000A000CC6989 /* CTDefinition.m */,
-			);
-			name = onfiguration;
-			path = "CTCurriculumsTable-IOS-CollectionView-master/CTCollectionView";
-			sourceTree = "<group>";
-		};
 		B699210E1AE000A000CC6989 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B69921391AE098EF00CC6989 /* CourseStore.h */,
-				B699213A1AE098EF00CC6989 /* CourseStore.m */,
 				B699210C1AE000A000CC6989 /* CTCourseInfo.h */,
 				B699210D1AE000A000CC6989 /* CTCourseInfo.m */,
 			);
@@ -540,13 +526,11 @@
 				B699212E1AE000A000CC6989 /* CTHeadViewCell.m in Sources */,
 				27E7AA5E19C2EAA400E037AD /* XPathQuery.m in Sources */,
 				27E7AA6019C2EAA400E037AD /* DataModel.m in Sources */,
-				B699213B1AE098EF00CC6989 /* CourseStore.m in Sources */,
 				B699212D1AE000A000CC6989 /* CTWeekView.m in Sources */,
 				27E7AA5C19C2EAA400E037AD /* TFHpple.m in Sources */,
 				B69921381AE000A000CC6989 /* CTDayViewController.m in Sources */,
 				27E7AA5A19C2EAA400E037AD /* CalDataModel.m in Sources */,
 				B69921331AE000A000CC6989 /* CTCollectionView.m in Sources */,
-				B699212B1AE000A000CC6989 /* CTDefinition.m in Sources */,
 				2795DD7218A51FAA00F0ADD0 /* main.m in Sources */,
 				B699212C1AE000A000CC6989 /* CTCourseInfo.m in Sources */,
 				27E7AA6219C2EAA400E037AD /* FenShuViewController.m in Sources */,
@@ -554,6 +538,7 @@
 				27E7AA5B19C2EAA400E037AD /* KeBiaoViewController.m in Sources */,
 				27E7AA6819C2EFE200E037AD /* UserInfoManager.m in Sources */,
 				27E7AA5F19C2EAA400E037AD /* LoginViewController.m in Sources */,
+				B6A5A8A51AEA4F9300D5593F /* CTDefinition.m in Sources */,
 				B69921351AE000A000CC6989 /* CTCollectionViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,6 +611,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -668,6 +654,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

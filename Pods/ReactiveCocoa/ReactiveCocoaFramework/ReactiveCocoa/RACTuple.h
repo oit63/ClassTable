@@ -31,15 +31,15 @@
 /// Examples
 ///
 ///   RACTupleUnpack(NSString *string, NSNumber *num) = [RACTuple tupleWithObjects:@"foo", @5, nil];
-///   NSLog(@"string: %@", string);
-///   NSLog(@"num: %@", num);
+///   LLog(@"string: %@", string);
+///   LLog(@"num: %@", num);
 ///
 ///   /* The above is equivalent to: */
 ///   RACTuple *t = [RACTuple tupleWithObjects:@"foo", @5, nil];
 ///   NSString *string = t[0];
 ///   NSNumber *num = t[1];
-///   NSLog(@"string: %@", string);
-///   NSLog(@"num: %@", num);
+///   LLog(@"string: %@", string);
+///   LLog(@"num: %@", num);
 #define RACTupleUnpack(...) \
         RACTupleUnpack_(__VA_ARGS__)
 

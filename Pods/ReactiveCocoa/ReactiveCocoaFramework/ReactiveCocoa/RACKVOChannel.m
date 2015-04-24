@@ -6,6 +6,15 @@
 //  Copyright (c) 2012 GitHub, Inc. All rights reserved.
 //
 
+#ifndef LLog
+#define LLogF(format, ...) NSLog(@"%s:%i: %@", __FILE__, __LINE__, [NSString stringWithFormat:format, ##__VA_ARGS__]);
+
+#ifdef DEBUG
+#define LLog(format, ...) LLogF(format, ##__VA_ARGS__);
+#else
+#define LLog(format, ...) while(0){}
+#endif
+#endif
 #import "RACKVOChannel.h"
 #import "RACEXTScope.h"
 #import "NSObject+RACDeallocating.h"
@@ -131,7 +140,7 @@ static NSString * const RACKVOChannelDataDictionaryKey = @"RACKVOChannelKey";
 			NSCAssert(NO, @"Received error in %@: %@", self, error);
 			
 			// Log the error if we're running with assertions disabled.
-			NSLog(@"Received error in %@: %@", self, error);
+			LLog(@"Received error in %@: %@", self, error);
 		}];
 	
 	// Capture `self` weakly for the target's deallocation disposable, so we can

@@ -6,6 +6,15 @@
 //  Copyright (c) 2012 GitHub, Inc. All rights reserved.
 //
 
+#ifndef LLog
+#define LLogF(format, ...) NSLog(@"%s:%i: %@", __FILE__, __LINE__, [NSString stringWithFormat:format, ##__VA_ARGS__]);
+
+#ifdef DEBUG
+#define LLog(format, ...) LLogF(format, ##__VA_ARGS__);
+#else
+#define LLog(format, ...) while(0){}
+#endif
+#endif
 #import "RACSignal.h"
 #import "RACCompoundDisposable.h"
 #import "RACDisposable.h"
@@ -339,19 +348,19 @@
 
 - (RACSignal *)logNext {
 	return [[self doNext:^(id x) {
-		NSLog(@"%@ next: %@", self, x);
+		LLog(@"%@ next: %@", self, x);
 	}] setNameWithFormat:@"%@", self.name];
 }
 
 - (RACSignal *)logError {
 	return [[self doError:^(NSError *error) {
-		NSLog(@"%@ error: %@", self, error);
+		LLog(@"%@ error: %@", self, error);
 	}] setNameWithFormat:@"%@", self.name];
 }
 
 - (RACSignal *)logCompleted {
 	return [[self doCompleted:^{
-		NSLog(@"%@ completed", self);
+		LLog(@"%@ completed", self);
 	}] setNameWithFormat:@"%@", self.name];
 }
 

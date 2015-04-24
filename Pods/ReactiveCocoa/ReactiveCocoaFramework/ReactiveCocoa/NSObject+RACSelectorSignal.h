@@ -38,7 +38,7 @@ extern const NSInteger RACSelectorSignalErrorMethodSwizzlingRace;
 ///
 ///     [[view rac_signalForSelector:@selector(mouseDown:)] subscribeNext:^(RACTuple *args) {
 ///         NSEvent *event = args.first;
-///         NSLog(@"mouse button pressed: %@", event);
+///         LLog(@"mouse button pressed: %@", event);
 ///     }];
 ///
 /// selector - The selector for whose invocations are to be observed. If it

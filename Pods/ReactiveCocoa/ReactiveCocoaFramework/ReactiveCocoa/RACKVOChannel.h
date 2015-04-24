@@ -44,7 +44,7 @@
 ///
 ///  // Logs the current value of self.integerProperty, and all future changes.
 ///  [integerChannel subscribeNext:^(id value) {
-///      NSLog(@"value: %@", value);
+///      LLog(@"value: %@", value);
 ///  }];
 ///
 ///  // Binds properties to each other, taking the initial value from the right

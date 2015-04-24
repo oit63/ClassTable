@@ -66,8 +66,8 @@
             //        [manager GET:@"http://jwc.xhu.edu.cn/xscjcx.aspx?xh=11024132&xm=%D5%C5%C8%AB%C5%F4&gnmkdm=N121605" parameters:nil
             [manager GET:@"http://jwc.xhu.edu.cn/xsxjxtdl.aspx?" parameters:parameters2
                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                     //              NSLog(@"huoqushuju: %ld",(long)operation.response.statusCode);
-                     //                  NSLog(@"数据：%d",operation.response.statusCode);
+                     //              LLog(@"huoqushuju: %ld",(long)operation.response.statusCode);
+                     //                  LLog(@"数据：%d",operation.response.statusCode);
                      NSURL *urlLinshi=operation.request.URL;
                      self.urlScore=urlLinshi.absoluteString;
                      NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding (kCFStringEncodingGB_18030_2000);
@@ -86,11 +86,11 @@
                      
                      TFHppleElement *element = [elements objectAtIndex:0];
                      self.viewState=[element objectForKey:@"value"];
-                     NSLog(@"1提取到得viewstate为%@",self.viewState);
+                     LLog(@"1提取到得viewstate为%@",self.viewState);
                      //                      NSDictionary *parameters = @{@"__EVENTTARGET":@"",@"__EVENTARGUMENT":@"",@"__VIEWSTATE":self.viewState,@"btn_zcj": @"历年成绩"};
                      [self refreshModal];
                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                     NSLog(@"Error: %@", [error debugDescription]);
+                     LLog(@"Error: %@", [error debugDescription]);
                  }];//获取登陆后的网页
         });
         
@@ -116,12 +116,12 @@
                   NSData *data=responseObject;
                   NSString *transStr=[[NSString alloc]initWithData:data encoding:enc];
                   
-                  NSLog(@"biaodantijiaochenggong:%ld，%@",(long)operation.response.statusCode,transStr);//提交表单
+                  LLog(@"biaodantijiaochenggong:%ld，%@",(long)operation.response.statusCode,transStr);//提交表单
                   NSString *utf8HtmlStr = [transStr stringByReplacingOccurrencesOfString:@"<meta content=\"text/html; charset=gb2312\" http-equiv=\"Content-Type\">" withString:@"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
                   NSData *htmlDataUTF8 = [utf8HtmlStr dataUsingEncoding:NSUTF8StringEncoding];
                   [self arrangeData:htmlDataUTF8];
               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  NSLog(@"Error: %@", [error description]);
+                  LLog(@"Error: %@", [error description]);
               }];
         
     }else{
@@ -147,7 +147,7 @@
         [self.chengJiCache addObject:content];
         
         //                                    NSString *ta=[element tagName];
-        //                                    NSLog(@"成绩为%@%@",content,ta);
+        //                                    LLog(@"成绩为%@%@",content,ta);
     }
     
     //Get all the cells of the 2nd row of the 3rd table
@@ -157,7 +157,7 @@
         [self.chengJiCache removeObjectsAtIndexes:indexes];
         [self.chengJiList removeAllObjects];
         for(int i=0; i<(countCache-15)/15;i++){
-            //                                    NSLog(@"%@",[self.chengJiCache objectAtIndex:i]);
+            //                                    LLog(@"%@",[self.chengJiCache objectAtIndex:i]);
             DataModel *scoreModal = [[DataModel alloc]initWithName:[self.chengJiCache objectAtIndex:3+i*15]
                                                               mark:[self.chengJiCache objectAtIndex:8+i*15]
                                                             jidian:[self.chengJiCache objectAtIndex:7+i*15]

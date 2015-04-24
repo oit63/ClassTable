@@ -128,15 +128,15 @@
         //
         //         NSEnumerator * enumeratorValue = [newDictionary objectEnumerator];
         //         //快速枚举遍历所有Value和Key
-        //         NSLog(@"Cookie输出开始");
+        //         LLog(@"Cookie输出开始");
         //
         //         for (NSObject *object in enumeratorValue) {
-        //         NSLog(@"遍历Value的值: %@",object);
+        //         LLog(@"遍历Value的值: %@",object);
         //         }
         //         NSEnumerator * enumeratorKey = [newDictionary keyEnumerator];
         //
         //         for (NSObject *object in enumeratorKey) {
-        //         NSLog(@"遍历KEY的值: %@",object);
+        //         LLog(@"遍历KEY的值: %@",object);
         //         }
         //
         
@@ -195,15 +195,15 @@
         //
         //         NSEnumerator * enumeratorValue = [newDictionary objectEnumerator];
         //         //快速枚举遍历所有Value和Key
-        //         NSLog(@"Cookie输出开始");
+        //         LLog(@"Cookie输出开始");
         //
         //         for (NSObject *object in enumeratorValue) {
-        //         NSLog(@"遍历Value的值: %@",object);
+        //         LLog(@"遍历Value的值: %@",object);
         //         }
         //         NSEnumerator * enumeratorKey = [newDictionary keyEnumerator];
         //
         //         for (NSObject *object in enumeratorKey) {
-        //         NSLog(@"遍历KEY的值: %@",object);
+        //         LLog(@"遍历KEY的值: %@",object);
         //         }
         //
         
@@ -221,15 +221,15 @@
     /*
      NSEnumerator * enumeratorValue = [self.cookieDictionary objectEnumerator];
      //快速枚举遍历所有Value和Key
-     NSLog(@"Cookie输出开始");
+     LLog(@"Cookie输出开始");
      
      for (NSObject *object in enumeratorValue) {
-     NSLog(@"遍历Value的值: %@",object);
+     LLog(@"遍历Value的值: %@",object);
      }
      NSEnumerator * enumeratorKey = [self.cookieDictionary keyEnumerator];
      
      for (NSObject *object in enumeratorKey) {
-     NSLog(@"遍历KEY的值: %@",object);
+     LLog(@"遍历KEY的值: %@",object);
      }
      */
     //

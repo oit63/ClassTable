@@ -58,7 +58,7 @@
     if ([kind isEqualToString:@"CTHeadViewCell"]) {
         attributes.frame = CGRectMake(0, LEFT_EDGE_CELL_HIGHT * indexPath.row,LEFT_EDGE_CELL_WIDTH, LEFT_EDGE_CELL_HIGHT);
         attributes.zIndex = -10;
-        NSLog(@"row:%ld x:%f y:%f w:%f h:%f\n",(long)indexPath.row,attributes.frame.origin.x,attributes.frame.origin.y,attributes.frame.size.width,attributes.frame.size.height);
+        LLog(@"row:%ld x:%f y:%f w:%f h:%f\n",(long)indexPath.row,attributes.frame.origin.x,attributes.frame.origin.y,attributes.frame.size.width,attributes.frame.size.height);
     }
     return attributes;
 }
